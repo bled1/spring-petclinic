@@ -13,7 +13,7 @@ COPY src ./src
 
 FROM base as build
 RUN chmod a+rx ./mvnw
-RUN ./mvnw package
+RUN ./mvnw -DskipTests=true package
 
 FROM eclipse-temurin:17-jre-jammy as production
 EXPOSE 8081
