@@ -3,7 +3,7 @@ services:
   petclinic:
     build:
       context: .
-      target: development
+      target: production
     ports:
       - "8000:8000"
       - "8081:8081"
