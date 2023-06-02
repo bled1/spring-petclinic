@@ -18,4 +18,4 @@ RUN ./mvnw package
 FROM eclipse-temurin:17-jre-jammy as production
 EXPOSE 8081
 COPY --from=build /app/target/spring-petclinic-*.jar /spring-petclinic.jar
-CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/spring-petclinic.jar"]
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom",  "-Dmaven.test.skip=true", "-jar", "/spring-petclinic.jar"]
